@@ -1,0 +1,440 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 142 70% 35%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 142 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 142 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 142 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 142 70% 35%;
+
+    --radius: 0.25rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 142 70% 50%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 142 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 142 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 142 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 142 70% 50%;
+
+    /* Custom dark mode colors for DepEd */
+    --deped-green: #15803d;
+    --deped-green-dark: #166534;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Make sure dark mode styles are properly applied */
+.dark body {
+  @apply bg-background text-foreground;
+}
+
+/* High contrast mode styles */
+.high-contrast {
+  --background: 0 0% 100%;
+  --foreground: 0 0% 0%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 0%;
+
+  --border: 0 0% 0%;
+  --input: 0 0% 0%;
+
+  --primary: 142 70% 35%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 0 0% 0%;
+  --secondary-foreground: 0 0% 100%;
+
+  --accent: 0 0% 0%;
+  --accent-foreground: 0 0% 100%;
+
+  --muted: 0 0% 90%;
+  --muted-foreground: 0 0% 0%;
+}
+
+.high-contrast.dark {
+  --background: 0 0% 0%;
+  --foreground: 0 0% 100%;
+
+  --card: 0 0% 0%;
+  --card-foreground: 0 0% 100%;
+
+  --border: 0 0% 100%;
+  --input: 0 0% 100%;
+
+  --primary: 142 70% 50%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 0 0% 100%;
+  --secondary-foreground: 0 0% 0%;
+
+  --accent: 0 0% 100%;
+  --accent-foreground: 0 0% 0%;
+
+  --muted: 0 0% 20%;
+  --muted-foreground: 0 0% 100%;
+}
+
+/* Custom styles */
+.deped-green {
+  background-color: #16a34a;
+}
+
+.deped-green-dark {
+  background-color: #15803d;
+}
+
+.news-card {
+  background-color: #f5f5f5;
+  border: 1px solid #e0e0e0;
+}
+
+.category-tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 0.25rem 0.5rem;
+  background-color: #f0f0f0;
+  color: #333;
+  border-radius: 0.25rem;
+}
+
+.news-date {
+  color: #666;
+  font-size: 0.875rem;
+}
+
+.news-author {
+  color: #666;
+  font-size: 0.875rem;
+}
+
+.news-content {
+  color: #333;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.action-button {
+  background-color: #f0f0f0;
+  color: #333;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.action-button:hover {
+  background-color: #e0e0e0;
+}
+
+.primary-button {
+  background-color: #16a34a;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.primary-button:hover {
+  background-color: #15803d;
+}
+
+/* Contact form styles */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  transition: border-color 0.15s ease-in-out;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #16a34a;
+  box-shadow: 0 0 0 1px #16a34a;
+}
+
+/* Office extensions styles */
+.office-extensions {
+  border: 1px solid #e0e0e0;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.office-extensions-header {
+  background-color: #f5f5f5;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.office-extensions-item {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.office-extensions-item:last-child {
+  border-bottom: none;
+}
+
+.local-number {
+  color: #666;
+  font-size: 0.875rem;
+}
+
+/* Map container styles */
+.map-container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.map-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.dark .map-placeholder {
+  background-color: #1f2937;
+  color: #e5e7eb;
+}
+
+.map-controls {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  z-index: 10;
+}
+
+.dark .map-controls {
+  background-color: #1f2937;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.map-controls-header {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dark .map-controls-header {
+  border-color: #374151;
+}
+
+.map-controls-content {
+  padding: 0.75rem 1rem;
+}
+
+.nearby-schools-list {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.school-item {
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  margin-bottom: 0.5rem;
+  background-color: #f5f5f5;
+  transition: background-color 0.2s ease;
+}
+
+.school-item:hover {
+  background-color: #e5e7eb;
+}
+
+.dark .school-item {
+  background-color: #374151;
+}
+
+.dark .school-item:hover {
+  background-color: #4b5563;
+}
+
+.pattern-grid-lg {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Dark mode specific styles */
+.dark .deped-green {
+  background-color: var(--deped-green);
+}
+
+.dark .deped-green-dark {
+  background-color: var(--deped-green-dark);
+}
+
+/* Dark mode scrollbar */
+.dark ::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #475569;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* Dark mode styles for office extensions */
+.dark .office-extensions {
+  border-color: #374151;
+}
+
+.dark .office-extensions-header {
+  background-color: #1f2937;
+  border-color: #374151;
+}
+
+.dark .office-extensions-item {
+  border-color: #374151;
+}
+
+.dark .local-number {
+  color: #9ca3af;
+}
+
+/* Dark mode styles for contact form */
+.dark .contact-form input,
+.dark .contact-form textarea {
+  background-color: #374151;
+  border-color: #4b5563;
+  color: #e5e7eb;
+}
+
+.dark .contact-form label {
+  color: #e5e7eb;
+}
+
+/* Dark mode styles for the deped-green header and footer */
+.dark .deped-green {
+  background-color: #15803d;
+}
+
+.dark .deped-green-dark {
+  background-color: #166534;
+}
+
+/* Dark mode styles for tabs */
+.dark [data-state="active"][data-orientation="horizontal"] {
+  background-color: #22c55e;
+  color: white;
+}
+
+.dark [data-orientation="horizontal"] {
+  background-color: #1f2937;
+}
+
+/* Dark mode styles for the contact form and map */
+.dark .contact-form input:focus,
+.dark .contact-form textarea:focus {
+  border-color: #22c55e;
+  box-shadow: 0 0 0 1px #22c55e;
+}
+
+.dark .get-directions-btn {
+  background-color: #22c55e;
+}
+
+.dark .get-directions-btn:hover {
+  background-color: #16a34a;
+}
+
+/* Get directions button */
+.get-directions-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  background-color: #16a34a;
+  color: white;
+  border-radius: 0.25rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.get-directions-btn:hover {
+  background-color: #15803d;
+}
